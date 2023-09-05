@@ -4,8 +4,7 @@ import {useNavigate} from "react-router-dom"
 const Navbar = () => {
   let Links = [
     { name: "Home", link: "/" },
-    { name: "About", link: "/" },
-    { name: "Contact", link: "/" },
+    { name: "Create", link: "/create" },
   ];
   const navigate=useNavigate();
 
@@ -24,7 +23,7 @@ const Navbar = () => {
                 className="text-black transition duration-200 hover:text-gray-400 lg:block"
                 key={index}
               >
-                <a href="/">{link.name}</a>
+                <a href={link.link}>{link.name}</a>
               </li>
             ))}
           </ul>
