@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
+import SaveBase64Image from "./saveimage";
 
 const Upload = () => {
   const [image, setImage] = useState(null);
-  const navigate = useNavigate();
+  const [displayData, setDisplaydata] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const convertToBase64 = (file) => {
     return new Promise((resolve, reject) => {
@@ -26,36 +29,55 @@ const Upload = () => {
   };
 
   const handlesubmit = () => {
-    navigate("/details")
+    const body = { image };
+
+    axios
+      .post("http://localhost:3000/api/upload/image", body)
+      .then((res) => {
+        if (res.data.status === "error") toast.error(res.data.message);
+        else {
+          setDisplaydata(res.data.result);
+          console.log(res.data);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const handleclear = () => {
     setImage(null);
+    setDisplaydata(null);
   };
 
   return (
     <div>
+      <div>
+        <Toaster />
+      </div>
       <Navbar />
       <div className='bg-[url("src/assets/leaves-8169572_1920.jpg")] h-fit w-full bg-cover bg-center p-72'></div>
       <div className="flex items-center justify-center p-10">
         {image ? (
           <div className="flex flex-col gap-5 justify-center items-center">
             <img
-              class="h-auto max-w-lg rounded-lg"
+              className="h-auto max-w-lg rounded-lg"
               src={image}
               alt="uploaded image will appear here"
             />
             <div className="flex items-center justify-center gap-5">
+              <SaveBase64Image base64ImageString={image} fileName="image.jpg" />
+
               <button
                 onClick={handlesubmit}
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit"
               >
-                Check details
+                {loading ? "loading..." : "Check Details"}
               </button>
 
               <button
                 onClick={handleclear}
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit"
               >
                 Clear
               </button>
@@ -101,6 +123,24 @@ const Upload = () => {
           </div>
         )}
       </div>
+      {displayData ? (
+        <>
+          <div className="shadow-md mx-2 my-5 rounded-md">
+            <div className="card flex flex-row items-center space-x-4 rounded-md py-4 px-8">
+              <div className="card-body text-xl font-bold flex flex-col">
+                <h1>{displayData.class_name}</h1>
+                <div className="flex flex-row space-x-1 items-center text-blue-500">
+                  <span className="text-lg font-normal text-black">
+                    {displayData.data}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

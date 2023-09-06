@@ -3,7 +3,8 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
-import authRoutes from "./routes/auth.js"
+import authRoutes from "./routes/auth.js";
+import uploadRoute from "./routes/upload.js";
 
 const app = express();
 dotenv.config();
@@ -31,7 +32,8 @@ mongoose.connection.on("disconnected", () => {
 });
 
 //middlewares
-app.use("/api/auth",authRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/upload", uploadRoute);
 
 app.listen(3000, () => {
   connect();
