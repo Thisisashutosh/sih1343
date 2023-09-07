@@ -129,9 +129,24 @@ const Upload = () => {
             <div className="card flex flex-row items-center space-x-4 rounded-md py-4 px-8">
               <div className="card-body text-xl font-bold flex flex-col">
                 <h1>{displayData.class_name}</h1>
-                <div className="flex flex-row space-x-1 items-center text-blue-500">
+                <div className="flex flex-col items-start gap-3 justify-center text-blue-500">
                   <span className="text-lg font-normal text-black">
-                    {displayData.data}
+                    {displayData.parsedData[2]}
+                  </span>
+                  <span className="text-lg font-normal text-black">
+                    {displayData.parsedData[3]}
+                  </span>
+                  <span className="text-lg font-normal text-black">
+                    {displayData.parsedData[4]}
+                  </span>
+                  <span className="text-lg font-normal text-black">
+                    {displayData.parsedData[5]}
+                  </span>
+                  <span className="text-lg font-normal text-black">
+                    {displayData.parsedData[6]}
+                  </span>
+                  <span className="text-lg font-normal text-black">
+                    {displayData.parsedData[7]}
                   </span>
                 </div>
               </div>

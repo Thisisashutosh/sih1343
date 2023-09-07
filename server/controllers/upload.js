@@ -43,11 +43,12 @@ export const upload = async (req, res) => {
     const param1 = JSON.parse(response);
     // console.log(`this is the data in json format ${JSON.stringify(param1.result)}`);
     const data = await extractdata(param1.result);
-    // console.log(`the data obtained from comaprison is ${data}`);
+    const parsedData = data.split("\n")
+    // console.log(`the data obtained from comaprison is ${parsedData}`);
     const class_name = param1.result;
 
-    if (response && data)
-      res.status(200).json({ status: "success", result: { class_name, data } });
+    if (response && parsedData)
+      res.status(200).json({ status: "success", result: { class_name, parsedData } });
     else
       res
         .status(404)
