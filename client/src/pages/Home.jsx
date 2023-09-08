@@ -1,11 +1,20 @@
 import React from 'react'
+import Homenav from '../components/Homenav'
+import Header from '../components/Header'
+import Info from '../components/Info'
+import Details from '../components/Details'
+import AYS from '../components/AYS'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
     <div className='flex justify-center items-center flex-col gap-5'>
-    Home
-    <a className='text-blue-700 bold text-xl underline' href="/signin">Sign in</a>
-    <a className='text-blue-700 bold text-xl underline' href="/signup">Sign up</a>
+      <Homenav/>
+      <Header/>
+      <Info/>
+      <Details/>
+      <AYS/>
+      <Footer/>
     </div>
   )
 }
