@@ -1,9 +1,11 @@
 import { exec } from "child_process";
+import base64Img from "base64-img";
 
-const modelcomputing = () => {
+const modelcomputing = (name) => {
   return new Promise((resolve, reject) => {
     // Create a Python process
-    exec("python3 predicted.py", (error, stdout, stderr) => {
+    const command = `python3 predicted.py ${name}`;
+    exec(command, (error, stdout, stderr) => {
       if (error) {
         console.error(`Error executing Python script: ${error}`);
         reject(error); // Reject the promise if there's an error
@@ -36,19 +38,25 @@ const extractdata = (param1) => {
 
 export const upload = async (req, res) => {
   try {
-    const response = await modelcomputing();
+    const { image } = req.body;
+    const name = base64Img.imgSync(image, "", "image");
+    const response = await modelcomputing(name);
     // console.log(`response from the function is ${response}`);
-    // console.log(typeof response)
+    // console.log(typeof response);
 
     const param1 = JSON.parse(response);
-    // console.log(`this is the data in json format ${JSON.stringify(param1.result)}`);
+    // console.log(
+    //   `this is the data in json format ${JSON.stringify(param1.result)}`
+    // );
     const data = await extractdata(param1.result);
-    const parsedData = data.split("\n")
+    const parsedData = data.split("\n");
     // console.log(`the data obtained from comaprison is ${parsedData}`);
     const class_name = param1.result;
 
     if (response && parsedData)
-      res.status(200).json({ status: "success", result: { class_name, parsedData } });
+      res
+        .status(200)
+        .json({ status: "success", result: { class_name, parsedData } });
     else
       res
         .status(404)

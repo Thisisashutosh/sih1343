@@ -66,7 +66,7 @@ const Upload = () => {
               alt="uploaded image will appear here"
             />
             <div className="flex items-center justify-center gap-5">
-              <SaveBase64Image base64ImageString={image} fileName="image.jpg" />
+              {/* <SaveBase64Image base64ImageString={image} fileName="image.jpg" /> */}
 
               <button
                 onClick={handlesubmit}

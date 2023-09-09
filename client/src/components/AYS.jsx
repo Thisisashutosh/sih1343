@@ -2,12 +2,12 @@ import React from "react";
 
 const AYS = () => {
   return (
-    <div className="headerContainer container flex items-center justify-center pt-20 w-11/12">
+    <div className="headerContainer container flex items-center justify-center pt-20 w-11/12 rounded-b-xl">
       <div className="textContainer flex flex-col items-start justify-center gap-10 w-11/12">
         <div className="w-full">
           <hr className="w-full h-px mx-auto bg-gray-800 border-0 rounded" />
         </div>
-        <h1 className="title text-gray-800 text-9xl font-serif">The Model</h1>
+        <h1 className="title text-gray-800 text-9xl font-serif">The Merlin</h1>
         <div className="flex items-center justify-between w-full">
           <button className="flex items-center w-96 justify-center hover:scale-110 duration-300 bg-yellow-500 p-2 rounded-full pr-7 pl-7 text-black text-xl">
             Get Started
@@ -30,7 +30,9 @@ const AYS = () => {
               />
             </svg>
           </button>
-          <h1 className="title text-gray-800 text-9xl font-serif">At Your Service</h1>
+          <h1 className="title text-gray-800 text-9xl font-serif">
+            At Your Service
+          </h1>
         </div>
       </div>
     </div>

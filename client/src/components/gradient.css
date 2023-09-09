@@ -1,0 +1,8 @@
+.gradient {
+  /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=b4c5ec&c2=ccb8c2&gt=l&gd=dtl
+*/
+background: #B4C5EC;
+background: linear-gradient(135deg, #B4C5EC, #CCB8C2);
+  }

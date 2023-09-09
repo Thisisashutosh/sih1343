@@ -4,11 +4,14 @@
 import tensorflow as tf
 import numpy as np
 from PIL import Image, ImageOps
-import json  
+import json
+import sys
 
 model = tf.keras.models.load_model('./ml/model_sev.h5')
 
-class_names = ['Aloe barbadensis miller (Aloevera)', 'Alpinia Galanga (Rasna)', 'Artocarpus Heterophyllus (Jackfruit)', 'Azadirachta Indica (Neem)', 'Basella Alba (Basale)', 'Brassica Juncea (Indian Mustard)', 'Carissa Carandas (Karanda)', 'Citrus Limon (Lemon)', 'Ficus Religiosa (Peepal Tree)', 'Jasminum (Jasmine)', 'Mangifera Indica (Mango fruit)', 'Mangifera Indica (Mango leaf)', 'Mentha (Mint)', 'Moringa Oleifera (Drumstick)', 'Ocimum Tenuiflorum (Tulsi)', 'Piper Betle (Betel)', 'Psidium Guajava (Guava fruit)', 'Psidium Guajava (Guava leaf)', 'Punica Granatum (Pomegranate)', 'Rosa-sinensis (Hibiscus)', 'Santalum Album (Sandalwood)', 'Syzygium Cumini (Jamun)', 'Syzygium Jambos (Rose Apple)', 'Zingiber officinale Roscoe (Ginger)']
+class_names = ['Aloe barbadensis miller (Aloevera)', 'Alpinia Galanga (Rasna)', 'Artocarpus Heterophyllus (Jackfruit)', 'Azadirachta Indica (Neem)', 'Basella Alba (Basale)', 'Brassica Juncea (Indian Mustard)', 'Carissa Carandas (Karanda)', 'Citrus Limon (Lemon)', 'Ficus Religiosa (Peepal Tree)', 'Jasminum (Jasmine)', 'Mangifera Indica (Mango fruit)', 'Mangifera Indica (Mango leaf)',
+               'Mentha (Mint)', 'Moringa Oleifera (Drumstick)', 'Ocimum Tenuiflorum (Tulsi)', 'Piper Betle (Betel)', 'Psidium Guajava (Guava fruit)', 'Psidium Guajava (Guava leaf)', 'Punica Granatum (Pomegranate)', 'Rosa-sinensis (Hibiscus)', 'Santalum Album (Sandalwood)', 'Syzygium Cumini (Jamun)', 'Syzygium Jambos (Rose Apple)', 'Zingiber officinale Roscoe (Ginger)']
+
 
 def predict_single_image(image_path, model, class_names):
     data = np.ndarray(shape=(1, 150, 150, 3), dtype=np.float32)
@@ -40,11 +43,13 @@ def predict_single_image(image_path, model, class_names):
 
     return class_prediction
 
+
 # Example usage:
-test_image_path = './SET/images/image.jpg'
+name = sys.argv[1]
+test_image_path = name
 predicted_class = predict_single_image(test_image_path, model, class_names)
 response_data = {
     "result": predicted_class
 }
-json_data=json.dumps(response_data)
+json_data = json.dumps(response_data)
 print(json_data)

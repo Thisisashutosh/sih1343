@@ -4,7 +4,6 @@ import {useNavigate} from "react-router-dom"
 const Navbar = () => {
   let Links = [
     { name: "Home", link: "/" },
-    { name: "Create", link: "/create" },
   ];
   const navigate=useNavigate();
 

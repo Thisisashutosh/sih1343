@@ -3,9 +3,9 @@ const Footer = () => {
     <div className="bg-yellow-500 flex flex-col items-center justify-center w-full h-fit">
       <div className="link flex items-center justify-center gap-40 mb-40 mt-40">
         <div className="logo">
-          <h1 className="text-black text-4xl font-semibold">Model name</h1>
-          <p className="text-black w-60">
-            Crechterwoord K12 182 DK Alknjkcb, All Rights Reserved
+          <h1 className="title text-gray-800 text-8xl font-serif">Merlin</h1>
+          <p className="text-black text-xl w-60">
+            Kolkata, West Bengal, India, All Rights Reserved
           </p>
         </div>
         <div className="linksContainer flex items-start justify-center gap-36">
@@ -29,7 +29,7 @@ const Footer = () => {
           <div className="getintouch">
             <h1 className="text-black font-semibold mb-10">Get in touch</h1>
             <ul className="text-black flex flex-col gap-5">
-              <li>Crechterwoord K12 182 DK Alknjkcb</li>
+              <li>Kolkata, West Bengal, India</li>
               <li>085-132567</li>
               <li>info@payme.net</li>
             </ul>
@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="copyright mb-10">
-        <p className="text-black">© 2021 GPT-3. All rights reserved.</p>
+        <p className="text-black">© 2021 MERLIN. All rights reserved.</p>
       </div>
     </div>
   );
