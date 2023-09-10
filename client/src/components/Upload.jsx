@@ -70,14 +70,14 @@ const Upload = () => {
 
               <button
                 onClick={handlesubmit}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit"
+                className="hover:scale-110 duration-300 text-white p-3 rounded-xl bg-gray-800 font-bold"
               >
                 {loading ? "loading..." : "Check Details"}
               </button>
 
               <button
                 onClick={handleclear}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit"
+                className="hover:scale-110 duration-300 text-white p-3 rounded-xl bg-gray-800 font-bold"
               >
                 Clear
               </button>
@@ -125,11 +125,12 @@ const Upload = () => {
       </div>
       {displayData ? (
         <>
-          <div className="shadow-md mx-2 my-5 rounded-md">
+          <div className="shadow-xl mx-2 my-5 rounded-md bg-gray-200 font-serif">
             <div className="card flex flex-row items-center space-x-4 rounded-md py-4 px-8">
               <div className="card-body text-xl font-bold flex flex-col">
                 <h1>{displayData.class_name}</h1>
-                <div className="flex flex-col items-start gap-3 justify-center text-blue-500">
+                <hr className="w-full h-px mx-auto bg-gray-800 border-0 rounded" />
+                <div className="flex flex-col items-start gap-3 justify-center mt-5">
                   <span className="text-lg font-normal text-black">
                     {displayData.parsedData[2]}
                   </span>

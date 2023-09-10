@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Homenav = () => {
-  let Links = [{ name: "MERLIN", link: "/" }];
+  let Links = [{ name: "MERLINN", link: "/" }];
   const navigate = useNavigate();
 
   return (

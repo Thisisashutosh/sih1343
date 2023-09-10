@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
-    <div className="bg-yellow-500 flex flex-col items-center justify-center w-full h-fit">
+    <div className="bg-yellow-500 container flex flex-col items-center justify-center w-full h-fit">
       <div className="link flex items-center justify-center gap-40 mb-40 mt-40">
         <div className="logo">
-          <h1 className="title text-gray-800 text-8xl font-serif">Merlin</h1>
+          <h1 className="title text-gray-800 text-8xl font-serif">Merlinn</h1>
           <p className="text-black text-xl w-60">
             Kolkata, West Bengal, India, All Rights Reserved
           </p>
@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="copyright mb-10">
-        <p className="text-black">© 2021 MERLIN. All rights reserved.</p>
+        <p className="text-black">© 2023 MERLINN. All rights reserved.</p>
       </div>
     </div>
   );

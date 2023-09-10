@@ -7,7 +7,7 @@ const AYS = () => {
         <div className="w-full">
           <hr className="w-full h-px mx-auto bg-gray-800 border-0 rounded" />
         </div>
-        <h1 className="title text-gray-800 text-9xl font-serif">The Merlin</h1>
+        <h1 className="title text-gray-800 text-9xl font-serif">The Merlinn</h1>
         <div className="flex items-center justify-between w-full">
           <button className="flex items-center w-96 justify-center hover:scale-110 duration-300 bg-yellow-500 p-2 rounded-full pr-7 pl-7 text-black text-xl">
             Get Started
