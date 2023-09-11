@@ -7,7 +7,7 @@ from PIL import Image, ImageOps
 import json
 import sys
 
-model = tf.keras.models.load_model('./ml/model_sev.h5')
+model = tf.keras.models.load_model('./ml/model_sev3.h5')
 
 class_names = ['Aloe barbadensis miller (Aloevera)', 'Alpinia Galanga (Rasna)', 'Artocarpus Heterophyllus (Jackfruit)', 'Azadirachta Indica (Neem)', 'Basella Alba (Basale)', 'Brassica Juncea (Indian Mustard)', 'Carissa Carandas (Karanda)', 'Citrus Limon (Lemon)', 'Ficus Religiosa (Peepal Tree)', 'Jasminum (Jasmine)', 'Mangifera Indica (Mango fruit)', 'Mangifera Indica (Mango leaf)',
                'Mentha (Mint)', 'Moringa Oleifera (Drumstick)', 'Ocimum Tenuiflorum (Tulsi)', 'Piper Betle (Betel)', 'Psidium Guajava (Guava fruit)', 'Psidium Guajava (Guava leaf)', 'Punica Granatum (Pomegranate)', 'Rosa-sinensis (Hibiscus)', 'Santalum Album (Sandalwood)', 'Syzygium Cumini (Jamun)', 'Syzygium Jambos (Rose Apple)', 'Zingiber officinale Roscoe (Ginger)']
