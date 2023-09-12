@@ -4,8 +4,12 @@ import Upload from "./components/Upload";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import Home from "./pages/Home";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    console.log(import.meta.env.VITE_APP_SERVER_URL)
+  }, [])
   return (
     <>
       <BrowserRouter>

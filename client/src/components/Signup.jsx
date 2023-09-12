@@ -14,7 +14,9 @@ export default function Signup() {
     const body = { email, password };
 
     axios
-      .post("http://localhost:3000/api/auth/signup", body)
+      // .post("http://localhost:3000/api/auth/signup", body)
+      .post(`${import.meta.env.VITE_APP_SERVER_URL}/api/auth/signup`, body)
+      
       .then((res) => {
         if (res.data.status === "error") toast.error(res.data.message);
         else {

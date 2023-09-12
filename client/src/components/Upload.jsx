@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import SaveBase64Image from "./saveimage";
+import LoadingScreen from "./LoadingScreen";
 
 const Upload = () => {
   const [image, setImage] = useState(null);
@@ -28,11 +29,16 @@ const Upload = () => {
     setImage(base64);
   };
 
-  const handlesubmit = () => {
+  const handlesubmit = async() => {
+    console.log("first")
     const body = { image };
+    
+    setLoading(true)
 
-    axios
-      .post("http://localhost:3000/api/upload/image", body)
+    await axios
+      // .post("http://localhost:3000/api/upload/image", body)
+      .post(`${import.meta.env.VITE_APP_SERVER_URL}/api/upload/image`, body)
+
       .then((res) => {
         if (res.data.status === "error") toast.error(res.data.message);
         else {
@@ -43,6 +49,8 @@ const Upload = () => {
       .catch((error) => {
         console.log(error);
       });
+    setLoading(false)
+
   };
 
   const handleclear = () => {
@@ -157,6 +165,7 @@ const Upload = () => {
       ) : (
         <></>
       )}
+      {loading && <LoadingScreen />}
     </div>
   );
 };
