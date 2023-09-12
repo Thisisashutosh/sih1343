@@ -14,7 +14,8 @@ export default function Signin() {
     const body = { email, password };
 
     axios
-      .post("http://localhost:3000/api/auth/signin", body)
+      // .post("http://localhost:3000/api/auth/signin", body)
+      .post(`${import.meta.env.VITE_APP_SERVER_URL}/api/auth/signin`, body)
       .then((res) => {
         if (res.data.status === "error") toast.error(res.data.message);
         else {

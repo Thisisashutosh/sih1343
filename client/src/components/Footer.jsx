@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="bg-yellow-500 container flex flex-col items-center justify-center w-full h-fit">
+    <div className="bg-yellow-500 container w-full flex flex-col items-center justify-center w-full h-fit">
       <div className="link flex items-center justify-center gap-40 mb-40 mt-40">
         <div className="logo">
           <h1 className="title text-gray-800 text-8xl font-serif">Merlinn</h1>
