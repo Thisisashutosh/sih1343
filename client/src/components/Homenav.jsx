@@ -8,7 +8,12 @@ const Homenav = () => {
   return (
     <nav className="sticky top-0 z-10 w-full bg-transparent shadow-sm bg-opacity-30 bg-clip-padding backdrop-filter backdrop-blur-lg border-gray-200">
       <div className="relative flex items-center justify-between w-full max-w-screen-xl px-5 py-1 mx-auto text-gray lg:px-2 lg:shadow-none">
-        <div className="z-0 w-full h-full lg:hideden">
+        <div className="z-0 w-full h-full lg:hideden flex gap-2 items-center">
+          <img
+            src="../../src/assets/option3.png"
+            className="w-11"
+            alt="MERLINN Logo"
+          />
           <ul className="flex items-center tracking-tight lg:space-x-5 text-md">
             {Links.map((link, index) => (
               <li key={index}>

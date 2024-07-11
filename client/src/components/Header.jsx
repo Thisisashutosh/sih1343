@@ -5,9 +5,11 @@ const Header = () => {
     <div className="headerContainer container flex items-center justify-center p-20 w-11/12 rounded-xl bg-gray-200">
       <div className="textContainer flex flex-col items-center justify-center gap-10 w-3/4">
         <h1 className="title text-gray-800 text-8xl font-serif leading-5">
-          Low Effort
+          Healing From
         </h1>
-        <h1 className="title text-gray-800 text-8xl font-serif ">High Yield</h1>
+        <h1 className="title text-gray-800 text-8xl font-serif ">
+          Nature's Wisdom
+        </h1>
         <p className="desc text-gray-800 font-normal text-xl w-6/12">
           Take a virtual trip into the alluring world of botany, where every
           flower, leaf, and bloom is just a touch away. You can now discover the

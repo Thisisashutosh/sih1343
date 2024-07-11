@@ -9,13 +9,7 @@ const Info = () => {
           <p className="p-0 m-0 top-0">Time to take a tour</p>
         </div>
         <h1 className="title text-gray-800 text-5xl font-serif">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita
-          laborum animi autem voluptatem delectus ratione nisi, mollitia
-          molestiae{" "}
-          <span className="title text-yellow-500 text-5xl font-serif">
-            similique quisquam iure quis, totam beatae ipsam.
-          </span>
-           Ratione rerum totam beatae sequi.
+        Ayurveda has a rich historical heritage in India, with roots that can be traced back over 5,000 years. Ayurveda, which places a strong emphasis on medicinal plants and herbs is one of the <span className="title text-yellow-500 text-5xl font-serif">world's oldest medical systems, having evolved over centuries of practice</span>, and is an important element of India's cultural and medical past.
         </h1>
         <button className="flex items-center justify-center hover:scale-110 duration-300 bg-yellow-500 p-2 rounded-full pr-7 pl-7 text-black text-xl">
           Learn more
